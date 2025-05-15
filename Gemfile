@@ -72,3 +72,7 @@ group :production do
 end
 
 gem 'devise'
+gem 'rspec-rails', '~> 4.0.0' #今までの受講で使用したのでver.4.0.0を指定
+gem 'factory_bot_rails'
+gem 'faker'
+gem 'shoulda-matchers'
