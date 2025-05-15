@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :last_name_kana, presence: true
   validates :first_name_kana, presence: true
   validates :birth_date, presence: true
-  
+
   # パスワードは英数字混合であること（6文字以上はDeviseがチェック）
   VALID_PASSWORD_REGEX = /\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/
   validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'は英数字を両方含む必要があります' }, on: :create
