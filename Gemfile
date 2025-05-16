@@ -76,3 +76,4 @@ gem 'rspec-rails', '~> 4.0.0' #今までの受講で使用したのでver.4.0.0�
 gem 'factory_bot_rails'
 gem 'faker'
 gem 'shoulda-matchers'
+gem 'active_hash'
