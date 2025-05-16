@@ -19,7 +19,7 @@ class User < ApplicationRecord
   VALID_NAME_REGEX = /\A[ぁ-んァ-ヶ一-龥々ー]+\z/
   validates :last_name, format: { with: VALID_NAME_REGEX, message: 'は全角文字で入力してください' }
   validates :first_name, format: { with: VALID_NAME_REGEX, message: 'は全角文字で入力してください' }
-ヶ
+
   # カナは全角カタカナ
   VALID_KANA_REGEX = /\A[ァ-ヶー]+\z/
   validates :last_name_kana, format: { with: VALID_KANA_REGEX, message: 'は全角カタカナで入力してください' }
