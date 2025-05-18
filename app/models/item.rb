@@ -16,5 +16,4 @@ class Item < ApplicationRecord
     validates :image
     validates :category_id, :condition_id, :shipping_fee_id, :shipping_area_id, :shipping_day_id, numericality: { other_than: 1 }
   end
-
 end
