@@ -1,24 +1,27 @@
 // item_price.js
 
-window.addEventListener('turbo:load', () => {
+const calculatePrice = () => {
   const priceInput = document.getElementById("item-price");
-  const tax = document.getElementById("add-tax-price");
-  const profit = document.getElementById("profit");
+  const addTaxDom = document.getElementById("add-tax-price");
+  const profitDom = document.getElementById("profit");
 
-  if (priceInput) {
-    priceInput.addEventListener("input", () => {
-      const inputValue = parseInt(priceInput.value);
+if (!priceInput) return;
 
-      if (inputValue >= 300 && inputValue <= 9999999) {
-        const taxAmount = Math.floor(inputValue * 0.1);
-        const profitAmount = inputValue - taxAmount;
+  priceInput.addEventListener("input", () => {
+    const inputValue = priceInput.value;
+    const tax = Math.floor(inputValue * 0.1);
+    const profit = inputValue - tax;
 
-        tax.textContent = taxAmount.toLocaleString();
-        profit.textContent = profitAmount.toLocaleString();
-      } else {
-        tax.textContent = '';
-        profit.textContent = '';
-      }
-    });
-  }
-});
+if (isNaN(inputValue) || inputValue === "") {
+      addTaxDom.innerHTML = "";
+      profitDom.innerHTML = "";
+    } else {
+      addTaxDom.innerHTML = tax;
+      profitDom.innerHTML = profit;
+    }
+  });
+};
+
+// Turboのイベントに対応させる
+document.addEventListener("turbo:load", calculatePrice);
+document.addEventListener("turbo:render", calculatePrice);
