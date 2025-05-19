@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
+  # has_one :order
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -16,4 +17,8 @@ class Item < ApplicationRecord
     validates :image
     validates :category_id, :condition_id, :shipping_fee_id, :shipping_area_id, :shipping_day_id, numericality: { other_than: 1 }
   end
+
+  # def sold_out?
+  #   order.present?
+  # end
 end
