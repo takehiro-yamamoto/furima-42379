@@ -18,10 +18,12 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
+
+   def show
      @item = Item.find(params[:id])
      @is_seller = user_signed_in? && current_user.id == @item.user_id
    end
+
 
   private
 

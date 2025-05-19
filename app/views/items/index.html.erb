@@ -132,7 +132,7 @@
       <% @items.each do |item| %>
 
       <li class='list'>
-        <%= link_to item_path(item) do %>
+       <%= link_to item_path(item) do %>  <%# 商品詳細画面へのリンク %>
         <div class='item-img-content'>
           <%= image_tag item.image, class: 'item-img' %>
 
