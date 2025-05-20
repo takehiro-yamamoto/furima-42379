@@ -20,13 +20,11 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def show
-     @is_seller = user_signed_in? && current_user.id == @item.user_id
+    @is_seller = user_signed_in? && current_user.id == @item.user_id
   end
 
   def edit
-
   end
 
   def update
@@ -36,28 +34,25 @@ class ItemsController < ApplicationController
       else
         render :edit
       end
+    elsif @item.update(item_params.except(:image))
+      redirect_to item_path(@item)
     else
-      if @item.update(item_params.except(:image))
-        redirect_to item_path(@item)
-      else
-        render :edit
-      end
+      render :edit
     end
   end
 end
 
   private
 
-  def item_params
-    params.require(:item).permit(:name, :description, :category_id, :condition_id, :shipping_fee_id, :shipping_area_id,
-                                 :shipping_day_id, :price, :image).merge(user_id: current_user.id)
-  end
+def item_params
+  params.require(:item).permit(:name, :description, :category_id, :condition_id, :shipping_fee_id, :shipping_area_id,
+                               :shipping_day_id, :price, :image).merge(user_id: current_user.id)
+end
 
-  def set_item
-   @item = Item.find(params[:id])
-  end
+def set_item
+  @item = Item.find(params[:id])
+end
 
-  def move_to_index
-   redirect_to root_path unless current_user == @item.user
-  end
-
+def move_to_index
+  redirect_to root_path unless current_user == @item.user
+end
