@@ -28,13 +28,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if item_params[:image].present?
-      if @item.update(item_params)
-        redirect_to item_path(@item)
-      else
-        render :edit
-      end
-    elsif @item.update(item_params.except(:image))
+    if @item.update(item_params)
       redirect_to item_path(@item)
     else
       render :edit
@@ -42,7 +36,7 @@ class ItemsController < ApplicationController
   end
 end
 
-  private
+private
 
 def item_params
   params.require(:item).permit(:name, :description, :category_id, :condition_id, :shipping_fee_id, :shipping_area_id,
