@@ -34,8 +34,18 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
+
+def destroy
+  item = Item.find(params[:id])
+  if item.user == current_user
+    item.destroy
+    redirect_to root_path
+  else
+    redirect_to root_path
+  end
 end
 
+end
 private
 
 def item_params
