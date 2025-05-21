@@ -4,7 +4,6 @@ class OrdersController < ApplicationController
   before_action :redirect_if_invalid
 
   def index
-    @item = Item.find(params[:item_id])
     @order_shipping_address = OrderShippingAddress.new
   end
 
