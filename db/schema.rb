@@ -54,7 +54,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_20_080237) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
-  create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "orders", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", null: false
@@ -63,7 +63,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_20_080237) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "shipping_addresses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "shipping_addresses", charset: "utf8mb3", force: :cascade do |t|
     t.string "postal_code", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
