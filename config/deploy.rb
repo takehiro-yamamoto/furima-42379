@@ -32,3 +32,8 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
+
+# Bundlerの設定
+set :bundle_roles, :all
+set :bundle_flags, '--deployment --quiet'
+set :bundle_path, -> { shared_path.join('bundle') }
