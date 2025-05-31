@@ -34,7 +34,7 @@ namespace :deploy do
 end
 
 # Bundlerの設定
-set :bundle_roles, :all
-set :bundle_flags, '--deployment --quiet'
-set :bundle_path, -> { shared_path.join('bundle') }
-set :bundle_bins, fetch(:bundle_bins, []).push('rake')
+# set :bundle_roles, :all
+# set :bundle_flags, '--deployment --quiet'
+# set :bundle_path, -> { shared_path.join('bundle') }
+# set :bundle_bins, fetch(:bundle_bins, []).push('rake')
