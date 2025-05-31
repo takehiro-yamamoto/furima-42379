@@ -94,4 +94,4 @@ gem 'capistrano-rbenv'
 gem 'capistrano-bundler'
 gem 'capistrano-rails'
 gem 'capistrano3-unicorn'
-# gem 'sprockets-rails'
+gem 'nokogiri', '1.18.8', platforms: [:ruby]
