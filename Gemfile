@@ -89,3 +89,8 @@ gem 'payjp'
 gem 'gon'
 gem 'dotenv-rails'
 gem "aws-sdk-s3", require: false
+gem 'capistrano'
+gem 'capistrano-rbenv'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano3-unicorn'
